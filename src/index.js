@@ -1,9 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-setInterval(function(){
-  ReactDOM.render(
-    <h2>Time now:- {new Date().toLocaleTimeString()}</h2>,
-    document.getElementById('root')
-  );
-},1000);
+function Cartoon(props){
+  return <h1>Hello, {props.name} on {props.show}</h1>
+}
+
+function Show(){
+  return <div>
+            <Cartoon name='Pikachu' show='Pokemon' />
+            <Cartoon name='Jasmine' show='Alladin' />
+          </div>
+}
+
+ReactDOM.render(
+  <Show/>,
+  document.getElementById('root')
+);
